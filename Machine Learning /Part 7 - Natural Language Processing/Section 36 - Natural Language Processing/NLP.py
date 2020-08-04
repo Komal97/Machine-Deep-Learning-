@@ -11,8 +11,8 @@ from nltk.stem.porter import PorterStemmer
 dataset = pd.read_csv("Dataset/Restaurant_Reviews.tsv", delimiter = '\t', quoting = 3)
 
 corpus = []
-
-for i in range(0, 1000):
+rows = dataset.shape[0]
+for i in range(rows):
     review = re.sub('[^A-Za-z]', ' ', dataset['Review'][i])
     review = review.lower()
     review = review.split()
